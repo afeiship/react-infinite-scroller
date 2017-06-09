@@ -88,6 +88,11 @@ export default class extends ReactEventEmitter{
     }
   }
 
+  scrollTo(inScrollX,inScrollY,inDuration){
+    //todo: will implement more parames:
+    this._wrapper.scrollTop = inScrollY;
+  }
+
   activateInfinite(){
     const {distances, infiniter} = this.props;
     const isInnerStatus = INNER_STATUS.indexOf(this.state.infiniterStatus) > -1;

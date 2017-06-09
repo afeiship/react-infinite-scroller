@@ -60,6 +60,11 @@ class App extends React.Component{
   state = {
     items:this.generateItems()
   };
+
+  componentWillMount(){
+    window.demo = this;
+  }
+
   generateItems(startIndex){
     let result = [];
     startIndex = startIndex || 0;
