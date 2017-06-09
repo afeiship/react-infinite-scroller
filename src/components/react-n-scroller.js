@@ -77,7 +77,8 @@ export default class extends ReactEventEmitter{
 
   activateInfinite(){
     const {distances, infiniter} = this.props;
-    if (infiniter && this._wrapper && this._scroller) {
+    const isInnerStatus = INNER_STATUS.indexOf(this.state.infiniterStatus) > -1;
+    if (infiniter && isInnerStatus && this._wrapper && this._scroller) {
       const wrapperBound = this._wrapper.getBoundingClientRect();
       const scrollerBound = this._scroller.getBoundingClientRect();
       if (scrollerBound.bottom - wrapperBound.bottom < distances[1]) {
