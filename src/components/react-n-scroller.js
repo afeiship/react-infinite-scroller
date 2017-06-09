@@ -60,6 +60,10 @@ export default class extends ReactEventEmitter{
 
   componentAttachEvents(){}
 
+  componentWillReceiveProps(inNextProps) {
+    this.setState(inNextProps);
+  }
+
   componentDidMount() {
     const { wrapper, scroller } = this.refs;
     this._wrapper = wrapper;
@@ -68,14 +72,24 @@ export default class extends ReactEventEmitter{
   }
 
   attachEvents(){
-    NxDomEvent.on(this._wrapper,'scroll',this._onMove);
+    this._scrollRes = NxDomEvent.on(this._wrapper,'scroll',this._onMove);
+  }
+
+
+  componentWillUnmount() {
+    super.componentWillUnmount();
+    this._scrollRes.destroy();
   }
 
   finishInfinte() {
     const isInnerStatus = INNER_STATUS.indexOf(this.state.infiniterStatus) > -1;
     if(isInnerStatus){
       this.setState({infiniterStatus: 'init'});
+    }else{
+      console.log('other status',this.state);
     }
+
+    console.log(this);
   }
 
   activateInfinite(){
