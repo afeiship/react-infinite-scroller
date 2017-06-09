@@ -72,7 +72,10 @@ export default class extends ReactEventEmitter{
   }
 
   finishInfinte() {
-    this.setState({infiniterStatus: 'init'});
+    const isInnerStatus = INNER_STATUS.indexOf(this.state.infiniterStatus) > -1;
+    if(isInnerStatus){
+      this.setState({infiniterStatus: 'init'});
+    }
   }
 
   activateInfinite(){
