@@ -1,0 +1,10 @@
+.react-n-scroller{
+  &[data-role=wrapper]{
+    -webkit-overflow-scrolling: touch;
+    height:100%;
+    overflow: scroll;
+
+    [data-role=body]{
+    }
+  }
+}
