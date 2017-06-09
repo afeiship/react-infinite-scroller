@@ -126,7 +126,7 @@ export default class extends ReactEventEmitter{
       className,children,
       refresher,infiniter,
       refresherStatus,infiniterStatus,
-      onRefresh,onInfinite,onScroll,
+      onRefresh,onInfinite,onScroll,onScrollEnd,
       distances,options,
       ...props} = this.props;
     return (
