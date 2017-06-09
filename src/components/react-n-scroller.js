@@ -88,6 +88,8 @@ export default class extends ReactEventEmitter{
     }
   }
 
+  finishPullToRefresh(){}
+
   scrollTo(inScrollX,inScrollY,inDuration){
     //todo: will implement more parames:
     this._wrapper.scrollTop = inScrollY;
