@@ -58,6 +58,16 @@ export default class extends ReactEventEmitter{
     return this._wrapper.scrollTop || 0;
   }
 
+
+  refresh(){
+  }
+
+  getValues(){
+    return {
+      top: this.scrollTop
+    };
+  }
+
   componentAttachEvents(){}
 
   componentWillReceiveProps(inNextProps) {
@@ -107,15 +117,6 @@ export default class extends ReactEventEmitter{
         this.setState({infiniterStatus: 'init'});
       }
     }
-  }
-
-  refresh(){
-  }
-
-  getValues(){
-    return {
-      top: this.scrollTop
-    };
   }
 
   _onMove = (inEvent) =>{
