@@ -1,5 +1,3 @@
-import './style.scss';
-
 import React,{PureComponent, createElement} from 'react';
 
 import NxBrowser from 'next-browser';
@@ -55,9 +53,16 @@ export default class extends ReactEventEmitter{
   }
 
   get scrollTop(){
-    return this._wrapper.scrollTop || 0;
+    return document.documentElement.scrollTop || document.body.scrollTop || 0;
   }
 
+  get wrapperBound(){
+    return document.body.getBoundingClientRect();
+  }
+
+  get scrollerBound(){
+    return this._scroller.getBoundingClientRect();
+  }
 
   refresh(){
   }
@@ -75,14 +80,13 @@ export default class extends ReactEventEmitter{
   }
 
   componentDidMount() {
-    const { wrapper, scroller } = this.refs;
-    this._wrapper = wrapper;
+    const { scroller } = this.refs;
     this._scroller = scroller;
     this.attachEvents();
   }
 
   attachEvents(){
-    this._scrollRes = NxDomEvent.on(this._wrapper,'scroll',this._onMove);
+    this._scrollRes = NxDomEvent.on( window ,'scroll',this._onMove);
   }
 
 
@@ -108,9 +112,9 @@ export default class extends ReactEventEmitter{
   activateInfinite(){
     const {distances, infiniter} = this.props;
     const isInnerStatus = INNER_STATUS.indexOf(this.state.infiniterStatus) > -1;
-    if (infiniter && isInnerStatus && this._wrapper && this._scroller) {
-      const wrapperBound = this._wrapper.getBoundingClientRect();
-      const scrollerBound = this._scroller.getBoundingClientRect();
+    if (infiniter && isInnerStatus && this._scroller) {
+      const wrapperBound = this.wrapperBound;
+      const scrollerBound = this.scrollerBound;
       if (scrollerBound.bottom - wrapperBound.bottom < distances[1]) {
         this.setState({infiniterStatus: 'active'});
       } else {
@@ -152,13 +156,11 @@ export default class extends ReactEventEmitter{
       distances,options,
       ...props} = this.props;
     return (
-      <section ref='wrapper' {...props} data-role="wrapper" className={classNames('react-n-scroller',className)}>
-        <div ref='scroller' data-role='scroller' className="react-n-scroller-content">
-          <div className="bd" data-role='body'>
-          {children}
-          </div>
-          {infiniter && createElement(infiniter, {status: this.state.infiniterStatus})}
+      <section ref='scroller' data-role='scroller' className="react-n-scroller">
+        <div className="bd" data-role='body'>
+        {children}
         </div>
+        {infiniter && createElement(infiniter, {status: this.state.infiniterStatus})}
       </section>
     );
   }

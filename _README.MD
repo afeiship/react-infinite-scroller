@@ -12,6 +12,17 @@ BACKUP_PROPERTIES
 BACKUP_USAGE
 ```
 
+## css:
+```css
+html,body{ height: auto; }
+#app{
+  overflow-x:hidden;
+}
+
+.fixed-footer{
+  position:fixed;
+}
+```
 
 
 ## resource:

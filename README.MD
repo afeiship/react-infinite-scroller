@@ -68,7 +68,7 @@ class App extends React.Component{
   generateItems(startIndex){
     let result = [];
     startIndex = startIndex || 0;
-    for(let i=startIndex; i<10; i++){
+    for(let i=startIndex; i<20; i++){
       result.push({
         text:'test' + i
       });
@@ -104,6 +104,17 @@ class App extends React.Component{
 
 ```
 
+## css:
+```css
+html,body{ height: auto; }
+#app{
+  overflow-x:hidden;
+}
+
+.fixed-footer{
+  position:fixed;
+}
+```
 
 
 ## resource:
