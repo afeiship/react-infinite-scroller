@@ -57,11 +57,13 @@ export default class extends ReactEventEmitter{
   }
 
   get wrapperBound(){
-    return document.body.getBoundingClientRect();
+    return {
+      bottom: document.documentElement.clientHeight
+    };
   }
 
   get scrollerBound(){
-    return this._scroller.getBoundingClientRect();
+    return document.body.getBoundingClientRect();
   }
 
   refresh(){
