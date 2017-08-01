@@ -108,7 +108,8 @@ export default class extends ReactEventEmitter{
 
   scrollTo(inScrollX,inScrollY,inDuration){
     //todo: will implement more parames:
-    this._wrapper.scrollTop = inScrollY;
+    // this._wrapper.scrollTop = inScrollY;
+    window.scrollTo( inScrollX, inScrollY );
   }
 
   activateInfinite(){
