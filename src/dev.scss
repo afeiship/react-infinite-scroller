@@ -9,6 +9,10 @@ html,body,#app,.hello-react-n-scroller{
   color:#F00;
   padding:50px 20px;
 
+  em{
+    font-style: normal;
+  }
+
   button{
     border: none;
     display: block;
@@ -37,9 +41,14 @@ html,body,#app,.hello-react-n-scroller{
 }
 .react-n-scroller{
   .item{
-    height:50px;
-    line-height: 50px;
+    height:80px;
+    line-height: 80px;
     background: #eee;
     margin: 0 0 10px 0;
   }
+}
+
+
+.react-infiniter{
+  text-align: center;
 }

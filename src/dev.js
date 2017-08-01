@@ -2,7 +2,7 @@ import './dev.scss';
 
 import ReactNScroller from './main';
 import ReactStatusManager from 'react-status-manager';
-
+import loadingImg from './assets/images/loading.gif';
 /*===example start===*/
 
 // install: npm install afeiship/react-n-scroller --save
@@ -11,10 +11,12 @@ class Infiniter extends React.PureComponent{
   render(){
     const {status} = this.props;
     return (
-      <ReactStatusManager className='react-infiniter' status={status} statusList={['init','active','running','nomore']}>
+      <ReactStatusManager className='react-infiniter' status={status} statusList={['init','active','nomore']}>
         <span>上滑加载</span>
-        <span>数据加载中...</span>
-        <span>数据加载中...</span>
+        <span>
+          <img src={loadingImg}  width="24" alt=""/>
+          <em>数据加载中...</em>
+        </span>
         <span>没有更多数据啦</span>
       </ReactStatusManager>
     );
@@ -24,7 +26,8 @@ class Infiniter extends React.PureComponent{
 
 class App extends React.Component{
   state = {
-    items:this.generateItems()
+    items:this.generateItems(),
+    total: 52
   };
 
   componentWillMount(){
@@ -56,7 +59,7 @@ class App extends React.Component{
     const {items} = this.state;
     return (
       <div className="hello-react-n-scroller">
-        <ReactNScroller distances={[0,1200]} ref='scroller' infiniter={Infiniter} onInfinite={this._onInfinite}>
+        <ReactNScroller distances={[0,300]} ref='scroller' infiniter={Infiniter} onInfinite={this._onInfinite}>
           {
             items.map((item,index)=>{
               return <div key={index} className="item"> {item.text} </div>
