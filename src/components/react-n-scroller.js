@@ -160,7 +160,7 @@ export default class extends ReactEventEmitter{
       ...props} = this.props;
     return (
       <section ref='scroller' data-role='scroller' className="react-n-scroller">
-        <div className="bd" data-role='body'>
+        <div className="clearfix bd" data-role='body'>
         {children}
         </div>
         {infiniter && createElement(infiniter, {status: this.state.infiniterStatus})}
