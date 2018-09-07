@@ -1,7 +1,7 @@
 import React,{PureComponent, createElement} from 'react';
 
 import NxBrowser from 'next-browser';
-import NxDebounceThrottle from 'next-debounce-throttle';
+import NxDebounce from 'next-debounce';
 import NxDomEvent from 'next-dom-event';
 import PropTypes from 'prop-types';
 import ReactEventEmitter from 'react-event-emitter';
@@ -138,7 +138,7 @@ export default class extends ReactEventEmitter{
     }
   };
 
-  _onEnd = NxDebounceThrottle.debounce((inEvent)=>{
+  _onEnd = NxDebounce((inEvent)=>{
     let {infiniterStatus} = this.state;
     let {onInfinite,onScrollEnd} = this.props;
     if (infiniterStatus === 'active') {
