@@ -46,7 +46,7 @@ class App extends React.Component {
 
   _onChange = inEvent => {
     let { items } = this.state;
-    if (items.length <= 80) {
+    if (items.length <= 30) {
       this.setState({ value: 'loading' }, () => {
         this.loadData().then(response => {
           items = items.concat(response);

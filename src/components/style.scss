@@ -1,5 +1,7 @@
 $react-infinite-scroller-options: () !default;
 
+@import "node_modules/webkit-sassui-spinkit/dist/webkit-sassui-spinkit.scss";
+
 .react-infinite-scroller {
   > .ft {
     border-top: 0.55px solid #eee;
@@ -8,5 +10,18 @@ $react-infinite-scroller-options: () !default;
     padding: 14px 0;
     text-align: center;
     font-size: 12px;
+
+    [data-status="loading"] {
+      > .webkit-sassui-spinkit{
+        width: 14px;
+        height: 14px;
+        color: #999;
+        margin-right: 4px;
+      }
+      >*{
+        vertical-align: middle;
+        display: inline-block;
+      }
+    }
   }
 }
