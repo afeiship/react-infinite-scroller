@@ -26,14 +26,6 @@ export default class extends Component {
   };
   /*===properties end===*/
 
-  get scrollHeight() {
-    return document.documentElement.scrollHeight;
-  };
-
-  get innerHeight() {
-    return window.innerHeight;
-  };
-
   get scrollY() {
     return window.scrollY;
   };
@@ -45,7 +37,7 @@ export default class extends Component {
 
   get boundary() {
     const { distance } = this.props;
-    return this.scrollHeight - (this.innerHeight + this.scrollY) <= distance;
+    return document.documentElement.scrollHeight - (window.innerHeight + this.scrollY) <= distance;
   };
 
   constructor(inProps) {
@@ -61,6 +53,7 @@ export default class extends Component {
   componentWillUnmount() {
     this.detachEvents();
   }
+
   componentWillReceiveProps(inProps) {
     const { value } = inProps;
     if (value !== this.state.value) {
