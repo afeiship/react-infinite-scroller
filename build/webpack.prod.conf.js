@@ -9,8 +9,8 @@ base.entry = {
 base.output = {
   path: config.build.assetsRoot,
   publicPath: config.build.assetsPublicPath,
-  filename: 'react-n-scroller.js',
-  library: 'ReactNScroller',
+  filename: 'react-window-scroller.js',
+  library: 'ReactWindowScroller',
   libraryTarget: 'umd'
 }
 

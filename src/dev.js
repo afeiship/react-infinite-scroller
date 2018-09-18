@@ -1,71 +1,27 @@
 import './dev.scss';
+import ReactWindowScroller from './main';
 
-import ReactNScroller from './main';
-import ReactStatusManager from 'react-status-manager';
-import loadingImg from './assets/images/loading.gif';
 /*===example start===*/
 
-// install: npm install afeiship/react-n-scroller --save
-// import : import ReactNScroller from 'react-n-scroller'
-class Infiniter extends React.PureComponent {
-  render() {
-    const { status } = this.props;
-    return (
-      <ReactStatusManager className='react-infiniter' value={status} items={['init', 'active', 'nomore']}>
-        <span>上滑加载</span>
-        <span>
-          <img src={loadingImg} width="24" alt="" />
-          <em>数据加载中...</em>
-        </span>
-        <span>没有更多数据啦</span>
-      </ReactStatusManager>
-    );
-  }
-}
+// install: npm install afeiship/react-window-scroller --save
+// import : import ReactWindowScroller from 'react-window-scroller'
 
-
-class App extends React.Component {
+class App extends React.Component{
   state = {
-    items: this.generateItems(),
-    total: 52
+
   };
 
-  componentWillMount() {
+  constructor(props){
+    super(props);
     window.demo = this;
+    window.refs = this.refs;
+    window.rc = this.refs.rc;
   }
 
-  generateItems(startIndex) {
-    let result = [];
-    startIndex = startIndex || 0;
-    for (let i = startIndex; i < 20; i++) {
-      result.push({
-        text: 'test' + i
-      });
-    }
-    return result;
-  }
-
-  _onInfinite = e => {
-    setTimeout(() => {
-      this.setState({
-        items: this.state.items.concat(this.generateItems(0))
-      }, () => {
-        this.refs.scroller.finishInfinte();
-      })
-    }, 1000);
-  };
-
-  render() {
-    const { items } = this.state;
+  render(){
     return (
-      <div className="hello-react-n-scroller">
-        <ReactNScroller distances={[0, 300]} ref='scroller' infiniter={Infiniter} onInfinite={this._onInfinite}>
-          {
-            items.map((item, index) => {
-              return <div key={index} className="item"> {item.text} </div>
-            })
-          }
-        </ReactNScroller>
+      <div className="hello-react-window-scroller">
+        <ReactWindowScroller ref='rc' />
       </div>
     );
   }
@@ -73,6 +29,6 @@ class App extends React.Component {
 /*===example end===*/
 
 ReactDOM.render(
-  <App />,
-  document.getElementById('app')
+    <App />,
+    document.getElementById('app')
 );

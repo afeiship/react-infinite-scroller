@@ -1,19 +1,21 @@
 *{margin: 0;padding:0;box-sizing: border-box;}
 ul,li{list-style: none;}
-
-html,body,#app,.hello-react-n-scroller{
-  // height:100%;
+button{
+  border: none;
+  background: no-clip;
+  &:focus{
+    outline: none;
+  }
 }
 
-.hello-react-n-scroller{
+@import './components/style.scss';
+
+
+.hello-react-window-scroller{
   color:#F00;
   padding:50px 20px;
 
-  em{
-    font-style: normal;
-  }
-
-  button{
+  .button{
     border: none;
     display: block;
     width:100%;
@@ -38,17 +40,4 @@ html,body,#app,.hello-react-n-scroller{
       outline: none;
     }
   }
-}
-.react-n-scroller{
-  .item{
-    height:80px;
-    line-height: 80px;
-    background: #eee;
-    margin: 0 0 10px 0;
-  }
-}
-
-
-.react-infiniter{
-  text-align: center;
 }

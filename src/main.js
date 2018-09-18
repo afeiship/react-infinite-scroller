@@ -1,2 +1,2 @@
-import ReactNScroller from 'components/react-n-scroller';
-export default ReactNScroller;
+import ReactWindowScroller from 'components/react-window-scroller';
+export default ReactWindowScroller;
