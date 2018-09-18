@@ -13,7 +13,7 @@
 
   static defaultProps = {
     distance: 60,
-    value: 'done',
+    value: 'loaded',
     onChange: noop
   };
   
@@ -45,7 +45,7 @@ $react-infinite-scroller-options:(
 
 class App extends React.Component {
   state = {
-    value: 'done',
+    value: 'loaded',
     items: []
   };
 
@@ -58,8 +58,6 @@ class App extends React.Component {
   }
 
   loadData() {
-    var t = Date.now();
-
     return new Promise((resolve) => {
       let items = [];
       for (let index = 0; index < 20; index++) {
@@ -69,9 +67,6 @@ class App extends React.Component {
         });
       };
       resolve(items);
-      console.info(
-        Date.now() - t
-      );
     })
   }
 
@@ -87,11 +82,11 @@ class App extends React.Component {
       this.setState({ value: 'loading' }, () => {
         this.loadData().then(response => {
           items = items.concat(response);
-          this.setState({ items, value: 'done' });
+          this.setState({ items, value: 'loaded' });
         });
       });
     } else {
-      this.setState({ value: 'nodata' });
+      this.setState({ value: 'complete' });
     }
   };
 

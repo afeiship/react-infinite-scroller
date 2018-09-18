@@ -8,7 +8,7 @@ import NxDomEvent from 'next-dom-event';
 import RCM from 'react-status-manager';
 
 // status list:
-const STATUS_LIST = ['done', 'loading', 'nodata'];
+const STATUS_LIST = ['loaded', 'loading', 'complete'];
 
 export default class extends Component {
   /*===properties start===*/
@@ -21,7 +21,7 @@ export default class extends Component {
 
   static defaultProps = {
     distance: 60,
-    value: 'done',
+    value: 'loaded',
     onChange: noop
   };
   /*===properties end===*/
@@ -94,12 +94,12 @@ export default class extends Component {
       >
         {children}
         <RCM nodeName='footer' className="ft" value={_value} items={STATUS_LIST}>
-          <div data-status="done">上拉加载更多</div>
+          <div data-status="loaded">上拉加载更多</div>
           <div data-status="loading">
             <i className="webkit-sassui-spinkit"></i>
             <span>数据加载中</span>
           </div>
-          <div data-status="nodata">没有更多数据了</div>
+          <div data-status="complete">没有更多数据了</div>
         </RCM>
       </div>
     );

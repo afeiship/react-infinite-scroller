@@ -8,7 +8,7 @@ import ReactInfiniteScroller from './main';
 
 class App extends React.Component {
   state = {
-    value: 'done',
+    value: 'loaded',
     items: []
   };
 
@@ -21,8 +21,6 @@ class App extends React.Component {
   }
 
   loadData() {
-    var t = Date.now();
-
     return new Promise((resolve) => {
       let items = [];
       for (let index = 0; index < 20; index++) {
@@ -32,9 +30,6 @@ class App extends React.Component {
         });
       };
       resolve(items);
-      console.info(
-        Date.now() - t
-      );
     })
   }
 
@@ -46,15 +41,15 @@ class App extends React.Component {
 
   _onChange = inEvent => {
     let { items } = this.state;
-    if (items.length <= 30) {
+    if (items.length <= 80) {
       this.setState({ value: 'loading' }, () => {
         this.loadData().then(response => {
           items = items.concat(response);
-          this.setState({ items, value: 'done' });
+          this.setState({ items, value: 'loaded' });
         });
       });
     } else {
-      this.setState({ value: 'nodata' });
+      this.setState({ value: 'complete' });
     }
   };
 
