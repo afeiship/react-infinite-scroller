@@ -102,7 +102,7 @@ export default class extends Component {
         {children}
         <RCM nodeName='footer' className="ft" value={_value} items={STATUS_LIST}>
           <div data-status="done">上拉加载更多</div>
-          <div data-status="loading">加载中...</div>
+          <div data-status="loading">数据加载中</div>
           <div data-status="nodata">没有更多数据了</div>
         </RCM>
       </div>
