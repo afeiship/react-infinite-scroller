@@ -88,7 +88,7 @@ export default class extends Component {
 
     return (
       <div
-        className={classNames('react-window-scroller', className)}
+        className={classNames('react-infinite-scroller', className)}
         data-status={_value}
         {...props}
       >
