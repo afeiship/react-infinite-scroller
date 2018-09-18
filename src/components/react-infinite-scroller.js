@@ -7,7 +7,7 @@ import objectAssign from 'object-assign';
 import NxDomEvent from 'next-dom-event';
 import RCM from 'react-status-manager';
 
-
+// status list:
 const STATUS_LIST = ['done', 'loading', 'nodata'];
 
 export default class extends Component {

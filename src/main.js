@@ -1,2 +1,2 @@
-import ReactWindowScroller from 'components/react-window-scroller';
-export default ReactWindowScroller;
+import ReactInfiniteScroller from 'components/react-infinite-scroller';
+export default ReactInfiniteScroller;

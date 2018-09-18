@@ -1,30 +1,30 @@
 {
-  "name": "react-window-scroller",
-  "version": "0.0.2",
+  "name": "react-infinite-scroller",
+  "version": "0.0.1",
   "description": "Native scroller component for react",
   "author": "afeiship <1290657123@qq.com>",
   "keywords": [
     "components",
-    "react-window-scroller",
+    "react-infinite-scroller",
     "ui",
     "theme"
   ],
   "private": false,
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/afeiship/react-window-scroller.git"
+    "url": "git+https://github.com/afeiship/react-infinite-scroller.git"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/afeiship/react-window-scroller/issues"
+    "url": "https://github.com/afeiship/react-infinite-scroller/issues"
   },
-  "homepage": "https://github.com/afeiship/react-window-scroller",
+  "homepage": "https://github.com/afeiship/react-infinite-scroller",
   "scripts": {
     "dev": "node build/dev-server.js",
     "build": "node build/build.js",
     "docs": "node build/auto-readme.js"
   },
-  "main": "./dist/react-window-scroller.js",
+  "main": "./dist/react-infinite-scroller.js",
   "devDependencies": {
     "autoprefixer": "^6.4.0",
     "autoprefixer-loader": "^3.2.0",

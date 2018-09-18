@@ -1,9 +1,7 @@
-$react-window-scroller-options:(
+$react-infinite-scroller-options: () !default;
 
-)!default;
-
-.react-window-scroller{
-  >.ft{
+.react-infinite-scroller {
+  > .ft {
     border-top: 0.55px solid #eee;
     text-align: center;
     color: #999;

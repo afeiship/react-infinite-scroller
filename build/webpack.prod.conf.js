@@ -9,8 +9,8 @@ base.entry = {
 base.output = {
   path: config.build.assetsRoot,
   publicPath: config.build.assetsPublicPath,
-  filename: 'react-window-scroller.js',
-  library: 'ReactWindowScroller',
+  filename: 'react-infinite-scroller.js',
+  library: 'ReactInfiniteScroller',
   libraryTarget: 'umd'
 }
 

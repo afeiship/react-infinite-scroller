@@ -11,15 +11,10 @@ button{
 @import './components/style.scss';
 
 
-.hello-react-window-scroller{
-  padding: 20px;
-  .item{
-    height: 120px;
-    line-height: 120px;
-    padding-left: 14px;
-    border-left: 4px solid #ccc;
-    margin-bottom: 10px;
-  }
+.hello-react-infinite-scroller{
+  color:#F00;
+  padding:50px 20px;
+
   .button{
     border: none;
     display: block;

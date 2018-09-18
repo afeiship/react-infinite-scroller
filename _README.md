@@ -1,4 +1,4 @@
-# react-window-scroller
+# react-infinite-scroller
 > Native scroller component for react
 
 ## properties:
@@ -8,19 +8,19 @@ BACKUP_PROPERTIES
 
 ## install && import:
 ```bash
-npm install --save afeiship/react-window-scroller --registry=https://registry.npm.taobao.org
+npm install --save afeiship/react-infinite-scroller --registry=https://registry.npm.taobao.org
 ```
 
 ```js
-import ReactWindowScroller from 'react-window-scroller';
+import ReactInfiniteScroller from 'react-infinite-scroller';
 ```
 
 ```scss
 // customize your styles:
-$react-window-scroller-options:(
+$react-infinite-scroller-options:(
 );
 
-@import 'node_modules/react-window-scroller/dist/style.scss';
+@import 'node_modules/react-infinite-scroller/dist/style.scss';
 ```
 
 
